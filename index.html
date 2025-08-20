@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FutureTech Magazine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">FutureTech</h1>
+      <ul>
+        <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+        <li><a href="#technology" onclick="scrollToSection('technology')">Technology</a></li>
+        <li><a href="#innovation" onclick="scrollToSection('innovation')">Innovation</a></li>
+        <li><a href="#lifestyle" onclick="scrollToSection('lifestyle')">Lifestyle</a></li>
+      </ul>
+      <input type="text" id="searchBar" placeholder="Search articles...">
+    </nav>
+  </header>
+
+  <!-- Hero Section / Home -->
+  <section class="hero" id="home">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div class="hero-content">
+    <h2>Exploring the Future of Technology</h2>
+      <p>Discover cutting-edge innovations, breakthrough discoveries, and the minds shaping tomorrow's world.</p>
+      <button onclick="scrollToSection('technology')">Explore Latest Stories</button>
+    </div>
+  </section>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator" id="scrollIndicator">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+
+  <!-- Section Progress Indicator -->
+  <div class="section-progress" id="sectionProgress">
+    <div class="progress-dot active" data-section="Home" onclick="scrollToSection('home')"></div>
+    <div class="progress-dot" data-section="Technology" onclick="scrollToSection('technology')"></div>
+    <div class="progress-dot" data-section="Innovation" onclick="scrollToSection('innovation')"></div>
+    <div class="progress-dot" data-section="Lifestyle" onclick="scrollToSection('lifestyle')"></div>
+  </div>
+
+  <!-- Technology Section -->
+  <section class="technology section-animate" id="technology">
+    <h2>Technology</h2>
+    <div class="section-content">
+      <div class="tech-intro">
+        <h3>Cutting-Edge Innovations</h3>
+        <p>Explore the latest breakthroughs in technology that are reshaping our world.</p>
+      </div>
+      <div class="card-gallery" data-section="technology">
+        <div class="cards-container">
+          <div class="card tech-card-1" data-title="AI Revolution" onclick="openArticle('ai')" data-index="0">
+            <img src="https://media.istockphoto.com/id/1647918116/photo/ai-revolution-businessman-working-and-touching-with-augmented-virtual-reality-at-night-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=ygdZnJ7m_Z2bLyEUUpLFJ52jR78-1ppGnz84F7_YUVE=" alt="AI Revolution">
+            <div class="card-content">
+              <h3>The AI Revolution</h3>
+              <p>Discover how artificial intelligence is transforming industries, from healthcare to finance, and what it means for the future of work.</p>
+            </div>
+          </div>
+          <div class="card tech-card-2" data-title="Quantum Computing" onclick="openArticle('quantum')" data-index="1">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&auto=format&fit=crop&q=60" alt="Quantum Computing">
+            <div class="card-content">
+              <h3>Quantum Computing</h3>
+              <p>The next frontier in computing power that will solve problems impossible for classical computers.</p>
+            </div>
+          </div>
+          <div class="card tech-card-3" data-title="5G Networks" onclick="openArticle('5g')" data-index="2">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&auto=format&fit=crop&q=60" alt="5G Networks">
+            <div class="card-content">
+              <h3>5G Revolution</h3>
+              <p>Ultra-fast connectivity enabling IoT, autonomous vehicles, and immersive experiences.</p>
+            </div>
+          </div>
+          <div class="card tech-card-4" data-title="Blockchain" onclick="openArticle('blockchain')" data-index="3">
+            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&auto=format&fit=crop&q=60" alt="Blockchain">
+            <div class="card-content">
+              <h3>Blockchain Future</h3>
+              <p>Decentralized technologies revolutionizing finance, supply chains, and digital ownership.</p>
+            </div>
+          </div>
+          <div class="card tech-card-5" data-title="VR/AR" onclick="openArticle('vrar')" data-index="4">
+            <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=600&auto=format&fit=crop&q=60" alt="VR/AR">
+            <div class="card-content">
+              <h3>Virtual Reality</h3>
+              <p>Immersive technologies changing how we work, learn, and experience entertainment.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="card-prev" data-target="technology">Prev</button>
+          <button class="card-next" data-target="technology">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation Section -->
+  <section class="innovation section-animate" id="innovation">
+    <h2>Innovation</h2>
+    <div class="section-content">
+      <div class="innovation-intro">
+        <h3>Tomorrow's Breakthroughs</h3>
+        <p>Witness the innovations that will define the next decade of human progress.</p>
+      </div>
+      <div class="card-gallery" data-section="innovation">
+        <div class="cards-container">
+          <div class="card innovation-card-1" data-title="Space Exploration" onclick="openArticle('space')" data-index="0">
+
+            <img src="https://images.unsplash.com/photo-1625442772842-329d4f08ea14?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c3BhY2UlMjBleHBsb3JhdGlvbiUyMG1hZ2VzfGVufDB8fDB8fHww" alt="Space Exploration">
+            <div class="card-content">
+              <h3>Mars & Beyond</h3>
+              <p>Join us on humanity's greatest adventure as we explore the latest missions to Mars and plans for interstellar travel.</p>
+            </div>
+          </div>
+          <div class="card innovation-card-2" data-title="Green Energy" onclick="openArticle('energy')" data-index="1">
+
+            <img src="https://media.istockphoto.com/id/1214915960/photo/sunset-over-solar-energy-farm-plant.webp?a=1&b=1&s=612x612&w=0&k=20&c=Htae_MiwH43CTh6O0tilptG137pncC5JYq4P2REWT4o=" alt="Green Energy">
+            <div class="card-content">
+              <h3>Clean Energy Future</h3>
+              <p>How renewable energy technologies are revolutionizing power generation and creating a sustainable tomorrow.</p>
+            </div>
+          </div>
+          <div class="card innovation-card-3" data-title="Biotech" onclick="openArticle('biotech')" data-index="2">
+
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&auto=format&fit=crop&q=60" alt="Biotechnology">
+            <div class="card-content">
+              <h3>Biotechnology Advances</h3>
+              <p>Revolutionary medical treatments and genetic engineering that will extend and enhance human life.</p>
+            </div>
+          </div>
+          <div class="card innovation-card-4" data-title="Ocean Tech" onclick="openArticle('ocean')" data-index="3">
+
+            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&auto=format&fit=crop&q=60" alt="Ocean Technology">
+            <div class="card-content">
+              <h3>Ocean Innovation</h3>
+              <p>Exploring the depths with advanced submersibles and marine conservation technologies.</p>
+            </div>
+          </div>
+          <div class="card innovation-card-5" data-title="Smart Cities" onclick="openArticle('smartcities')" data-index="4">
+            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&auto=format&fit=crop&q=60" alt="Smart Cities">
+            <div class="card-content">
+              <h3>Smart Cities</h3>
+              <p>Urban innovation creating sustainable, connected, and livable cities of the future.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="card-prev" data-target="innovation">Prev</button>
+          <button class="card-next" data-target="innovation">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle Section -->
+  <section class="lifestyle section-animate" id="lifestyle">
+    <h2>Lifestyle</h2>
+    <div class="section-content">
+      <div class="lifestyle-intro">
+        <h3>Tech-Enhanced Living</h3>
+        <p>How technology is transforming the way we live, work, and connect with each other.</p>
+      </div>
+      <div class="card-gallery" data-section="lifestyle">
+        <div class="cards-container">
+          <div class="card lifestyle-card-1" data-title="Smart Homes" onclick="openArticle('smarthome')" data-index="0">
+
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=60" alt="Smart Home">
+            <div class="card-content">
+              <h3>Smart Home Revolution</h3>
+              <p>Transform your living space with AI-powered automation, security, and energy management systems.</p>
+            </div>
+          </div>
+          <div class="card lifestyle-card-2" data-title="Future Gadgets" onclick="openArticle('gadgets')" data-index="1">
+
+            <img src="https://media.istockphoto.com/id/1334575820/photo/business-woman-using-mobile-smartphone-on-global-network-connection-and-data-customer.webp?a=1&b=1&s=612x612&w=0&k=20&c=exzeKDLNUYiXd3bJi5wibch3oJcKy6GKQM508so1Ams=" alt="Future Gadgets">
+            <div class="card-content">
+              <h3>Next-Gen Gadgets</h3>
+              <p>Explore the cutting-edge gadgets and wearables that will redefine our daily lives in the coming decade.</p>
+            </div>
+          </div>
+          <div class="card lifestyle-card-3" data-title="Digital Wellness" onclick="openArticle('wellness')" data-index="2">
+
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&auto=format&fit=crop&q=60" alt="Digital Wellness">
+            <div class="card-content">
+              <h3>Digital Wellness</h3>
+              <p>Finding balance in our connected world through mindful technology use and digital detox strategies.</p>
+            </div>
+          </div>
+          <div class="card lifestyle-card-4" data-title="Remote Work" onclick="openArticle('remotework')" data-index="3">
+
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60" alt="Remote Work">
+            <div class="card-content">
+              <h3>Future of Work</h3>
+              <p>How remote work technologies are reshaping careers and work-life balance globally.</p>
+            </div>
+          </div>
+          <div class="card lifestyle-card-5" data-title="Health Tech" onclick="openArticle('healthtech')" data-index="4">
+
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&auto=format&fit=crop&q=60" alt="Health Technology">
+            <div class="card-content">
+              <h3>Health Technology</h3>
+              <p>Wearable devices and health apps revolutionizing personal wellness and medical care.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="card-prev" data-target="lifestyle">Prev</button>
+          <button class="card-next" data-target="lifestyle">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FutureTech Magazine | All Rights Reserved</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

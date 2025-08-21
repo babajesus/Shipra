@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FutureTech Magazine</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -16,6 +17,8 @@
         <li><a href="#technology" onclick="scrollToSection('technology')">Technology</a></li>
         <li><a href="#innovation" onclick="scrollToSection('innovation')">Innovation</a></li>
         <li><a href="#lifestyle" onclick="scrollToSection('lifestyle')">Lifestyle</a></li>
+        <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+        <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
       </ul>
       <input type="text" id="searchBar" placeholder="Search articles...">
     </nav>
@@ -45,6 +48,8 @@
     <div class="progress-dot" data-section="Technology" onclick="scrollToSection('technology')"></div>
     <div class="progress-dot" data-section="Innovation" onclick="scrollToSection('innovation')"></div>
     <div class="progress-dot" data-section="Lifestyle" onclick="scrollToSection('lifestyle')"></div>
+    <div class="progress-dot" data-section="About" onclick="scrollToSection('about')"></div>
+    <div class="progress-dot" data-section="Contact" onclick="scrollToSection('contact')"></div>
   </div>
 
   <!-- Technology Section -->
@@ -218,8 +223,252 @@
     </div>
   </section>
 
+  <!-- About Section -->
+  <section class="about section-animate" id="about">
+    <h2>About FutureTech</h2>
+    <div class="section-content">
+      <div class="about-intro">
+        <h3>Pioneers of Tomorrow's Stories</h3>
+        <p>At FutureTech Magazine, we're passionate about exploring the cutting-edge innovations that are shaping our world. Our mission is to make complex technology accessible and exciting for everyone.</p>
+      </div>
+      
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-number" data-target="1000000">0</div>
+          <div class="stat-label">Monthly Readers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">Articles Published</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Expert Contributors</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="15">0</div>
+          <div class="stat-label">Countries Reached</div>
+        </div>
+      </div>
+
+      <div class="team-section">
+        <h3>Meet Our Team</h3>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="3017dca5ddec31af3b6ecc3ea28490d0.jpg" alt="Saumya Yadav">
+            </div>
+            <h4>Saumya Yadav</h4>
+            <p>Editor-in-Chief</p>
+            <div class="member-bio">Leading tech journalism for over a decade</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="8dbbdc4f8d498a4a8f1245fa1e639215.jpg" alt="Sumaiya Khan">
+            </div>
+            <h4>Sumaiya Khan</h4>
+            <p>AI & Innovation Reporter</p>
+            <div class="member-bio">Specialized in artificial intelligence and emerging tech</div>
+          </div>
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="images.jpeg" alt="Suchita Gupta">
+            </div>
+            <h4>Suchita Gupta</h4>
+            <p>Space & Science Editor</p>
+            <div class="member-bio">Covering space exploration and scientific breakthroughs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="newsletter-section">
+        <div class="newsletter-card">
+          <h3>🚀 Stay Updated with FutureTech</h3>
+          <p>Get the latest tech news, exclusive interviews, and breakthrough discoveries delivered to your inbox weekly.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe Now</button>
+          </form>
+          <div class="newsletter-benefits">
+            <div class="benefit">✨ Exclusive content</div>
+            <div class="benefit">🎯 Weekly tech insights</div>
+            <div class="benefit">📱 Mobile-friendly format</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact section-animate" id="contact">
+    <h2>Get In Touch</h2>
+    <div class="section-content">
+      <div class="contact-intro">
+        <h3>Let's Connect</h3>
+        <p>Have a story tip, partnership opportunity, or just want to say hello? We'd love to hear from you!</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-details">
+              <h4>Email Us</h4>
+              <p>hello@futuretechmagazine.com</p>
+              <p>tips@futuretechmagazine.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div class="contact-details">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                <i class="fa fa-twitter contact-social-icon" id="contact-twitter"></i>
+                <i class="fa fa-linkedin contact-social-icon" id="contact-linkedin"></i>
+                <i class="fa fa-instagram contact-social-icon" id="contact-instagram"></i>
+                <i class="fa fa-youtube contact-social-icon" id="contact-youtube"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div class="contact-details">
+              <h4>Response Time</h4>
+              <p>We typically respond within 24 hours</p>
+              <p>For urgent matters: within 4 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+              <label for="name">Name</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+              <label for="email">Email</label>
+            </div>
+            
+            <div class="form-group">
+              <select id="subject" name="subject" required>
+                <option value="">Select Topic</option>
+                <option value="story-tip">Story Tip</option>
+                <option value="partnership">Partnership</option>
+                <option value="feedback">Feedback</option>
+                <option value="press">Press Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="subject">Subject</label>
+            </div>
+            
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+              <label for="message">Message</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <div class="btn-particles"></div>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="testimonials-section">
+        <h3>What Our Readers Say</h3>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>"FutureTech keeps me ahead of the curve. Their insights into AI and quantum computing are unmatched!"</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=60" alt="Emma Davis">
+              </div>
+              <div class="author-info">
+                <h5>Emma Davis</h5>
+                <p>Tech Entrepreneur</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>"The space exploration coverage is phenomenal. I never miss an article about Mars missions!"</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=60" alt="James Wilson">
+              </div>
+              <div class="author-info">
+                <h5>James Wilson</h5>
+                <p>Aerospace Engineer</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>"Finally, tech news that's both accessible and deeply informative. FutureTech is my go-to source!"</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&auto=format&fit=crop&q=60" alt="Lisa Park">
+              </div>
+              <div class="author-info">
+                <h5>Lisa Park</h5>
+                <p>Software Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>&copy; 2025 FutureTech Magazine | All Rights Reserved</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>FutureTech Magazine</h4>
+        <p>Exploring tomorrow's technology today</p>
+        <div class="footer-social">
+          <i class="fa fa-twitter" id="footer-twitter"></i>
+          <i class="fa fa-linkedin" id="footer-linkedin"></i>
+          <i class="fa fa-instagram" id="footer-instagram"></i>
+          <i class="fa fa-youtube" id="footer-youtube"></i>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#technology">Technology</a></li>
+          <li><a href="#innovation">Innovation</a></li>
+          <li><a href="#lifestyle">Lifestyle</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>hello@futuretechmagazine.com</p>
+        <p>Follow us for daily tech updates</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 FutureTech Magazine | All Rights Reserved</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

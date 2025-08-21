@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Add active class to current progress dot
-        const sectionIndex = ['home', 'technology', 'innovation', 'lifestyle'].indexOf(entry.target.id);
+        const sectionIndex = ['home', 'technology', 'innovation', 'lifestyle', 'about', 'contact'].indexOf(entry.target.id);
         if (sectionIndex !== -1 && progressDots[sectionIndex]) {
           progressDots[sectionIndex].classList.add('active');
         }
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isScrolling) return;
     
     const currentSection = getCurrentSection();
-    const sections = ['home', 'technology', 'innovation', 'lifestyle'];
+    const sections = ['home', 'technology', 'innovation', 'lifestyle', 'about', 'contact'];
     const currentIndex = sections.indexOf(currentSection);
     
     if (Math.abs(e.deltaY) > 50) { // Only respond to significant scroll
@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Get current section based on scroll position
   function getCurrentSection() {
-    const sections = ['home', 'technology', 'innovation', 'lifestyle'];
+    const sections = ['home', 'technology', 'innovation', 'lifestyle', 'about', 'contact'];
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
     
@@ -513,4 +513,172 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     return 'home';
   }
+  
+  // Enhanced form functionality
+  const contactForm = document.getElementById('contactForm');
+  const newsletterForm = document.getElementById('newsletterForm');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      
+      // Simulate form submission with success message
+      const submitBtn = contactForm.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<span>Sending...</span>';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        submitBtn.innerHTML = '<span>Message Sent! ✨</span>';
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          contactForm.reset();
+        }, 2000);
+      }, 1500);
+      
+      // Show success notification
+      showNotification('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours!', 'success');
+    });
+  }
+  
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = newsletterForm.querySelector('input[type="email"]').value;
+      const submitBtn = newsletterForm.querySelector('button');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.textContent = 'Subscribing...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        submitBtn.textContent = 'Subscribed! ✨';
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          newsletterForm.reset();
+        }, 2000);
+      }, 1000);
+      
+      showNotification('Welcome to FutureTech! You\'ve successfully subscribed to our newsletter.', 'success');
+    });
+  }
+  
+  // Animated counter for statistics
+  function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.getAttribute('data-target'));
+          const current = parseInt(counter.textContent) || 0;
+          
+          if (current < target) {
+            const increment = target / 100;
+            const timer = setInterval(() => {
+              const value = parseInt(counter.textContent) + increment;
+              if (value >= target) {
+                counter.textContent = target.toLocaleString();
+                clearInterval(timer);
+              } else {
+                counter.textContent = Math.floor(value).toLocaleString();
+              }
+            }, 20);
+          }
+          
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => observer.observe(counter));
+  }
+  
+  // Initialize counter animation
+  animateCounters();
+  
+  // Notification system
+  function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+      <div class="notification-content">
+        <span class="notification-icon">${type === 'success' ? '✅' : 'ℹ️'}</span>
+        <span class="notification-message">${message}</span>
+        <button class="notification-close">×</button>
+      </div>
+    `;
+    
+    // Add notification styles
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95));
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 10000;
+      max-width: 400px;
+      transform: translateX(450px);
+      transition: transform 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Slide in animation
+    setTimeout(() => {
+      notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Close functionality
+    const closeBtn = notification.querySelector('.notification-close');
+    closeBtn.style.cssText = `
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-left: 15px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    `;
+    
+    closeBtn.addEventListener('click', () => {
+      notification.style.transform = 'translateX(450px)';
+      setTimeout(() => notification.remove(), 300);
+    });
+    
+    closeBtn.addEventListener('mouseenter', () => {
+      closeBtn.style.opacity = '1';
+    });
+    
+    closeBtn.addEventListener('mouseleave', () => {
+      closeBtn.style.opacity = '0.7';
+    });
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.style.transform = 'translateX(450px)';
+        setTimeout(() => notification.remove(), 300);
+      }
+    }, 5000);
+  }
+  
+
 });
